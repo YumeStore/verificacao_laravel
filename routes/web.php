@@ -20,4 +20,8 @@ Route::get('/', function () {
 
 Auth::routes();
 
+
+/*
+*Home [Bloqueada enquanto o email não for verificado pelo middleware]
+*/
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home')->middleware(['auth', 'verified']);
